@@ -1,0 +1,21 @@
+window.HALLOWEEN_CONFIG = {
+  "supabaseUrl": "https://ezhvougnxruujcmedmio.supabase.co",
+  "localApi": false,
+  "publishableKey": "sb_publishable_vAw5eBmyKOtpe1aKX5pv8w_BO96uikA",
+  "eventName": "THE FINAL BELL",
+  "eventSubtitle": "12 Players · Hidden Roles · One Final Bell",
+  "eventDate": "2026-10-31",
+  "eventTime": "19:00 - 21:30",
+  "venue": "Room 304",
+  "ticketPrice": "9.90",
+  "earlyBirdPrice": "9.90",
+  "regularPrice": "15.00",
+  "currency": "RM",
+  "durationMinutes": "25",
+  "phoneRule": "Main game is phone-free. Keep phones away once the round starts.",
+  "paymentNote": "Scan the payment QR, pay the amount shown, then enter the transaction reference from your banking app.",
+  "paymentRecipient": "Ng Yin Yu",
+  "paymentQr": "./assets/payment_qr.jpeg",
+  "contactText": "",
+  "publicSiteUrl": ""
+};

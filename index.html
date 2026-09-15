@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0810">
+  <title>THE FINAL BELL</title>
+  <link rel="stylesheet" href="./styles.css?v=20260912-slot-flow">
+</head>
+<body>
+  <div class="pixel-noise" aria-hidden="true"></div>
+  <main class="shell">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top"><span class="brand-icon">🔔</span><span id="brandName">THE FINAL BELL</span></a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#how" data-i18n="navHow">How to Play</a>
+          <a href="#roles" data-i18n="navRoles">Roles</a>
+          <a href="#booking" data-i18n="navBooking">Booking</a>
+        </div>
+        <div class="lang-switch" aria-label="Language">
+          <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="eyebrow" data-i18n="heroEyebrow">HALLOWEEN SPECIAL · HIDDEN ROLE GAME</div>
+        <h1 id="eventName">THE FINAL BELL</h1>
+        <p class="tagline">TRUST NO ONE.</p>
+        <p class="lead" id="eventSubtitle">12 Players · Hidden Roles · One Final Bell</p>
+        <div class="hero-pills">
+          <span>👥 <b>12</b> <span data-i18n="players">Players</span></span>
+          <span>⏱ <b id="durationHero">25</b> <span data-i18n="minutes">min</span></span>
+          <span>🎟 <b id="ticketHero">RM9.90 / RM15.00</b></span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="#booking" data-i18n="bookNow">BOOK A SLOT</a>
+          <a class="btn" href="#how" data-i18n="learnGame">HOW TO PLAY</a>
+        </div>
+      </div>
+
+      <div class="event-card pixel-panel">
+        <div class="panel-title"><span class="blink-dot"></span><span data-i18n="eventInfo">EVENT INFO</span></div>
+        <div><span data-i18n="dateLabel">📅 Date</span><strong id="eventDate">—</strong></div>
+        <div><span data-i18n="timeLabel">🕒 Time</span><strong id="eventTime">—</strong></div>
+        <div><span data-i18n="venueLabel">📍 Venue</span><strong id="venue">—</strong></div>
+        <div class="ticket-row"><span data-i18n="ticketLabel">🎟 Ticket</span><div id="ticket" class="ticket-prices">
+          <div class="ticket-price"><span data-i18n="earlyBirdLabel">Early Bird</span><strong id="earlyBirdAmount">RM9.90</strong></div>
+          <div class="ticket-price"><span data-i18n="regularLabel">Regular</span><strong id="regularAmount">RM15.00</strong></div>
+        </div></div>
+        <div><span data-i18n="gameLabel">⏱ Game</span><strong id="duration">25 min</strong></div>
+        <div class="event-note" data-i18n="arriveEarly">Please arrive 5 minutes early.</div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow" data-i18n="howEyebrow">HOW THE GAME WORKS</div>
+          <h2 data-i18n="howTitle">Learn it in one minute.</h2>
+          <p class="muted" data-i18n="howDesc">Read this before your round so the game can start fast.</p>
+        </div>
+      </div>
+
+      <button class="game-flow-frame" id="openGameFlow" type="button" aria-label="Open game flow image">
+        <img src="./assets/game-flow.webp" id="gameFlowImage" alt="THE FINAL BELL game flow infographic">
+        <span class="image-hint" data-i18n="tapImage">🔍 Tap to view full image</span>
+      </button>
+
+      <div class="flow-grid">
+        <article class="flow-step"><span class="flow-num">01</span><div><h3 data-i18n="flow1Title">Draw a role</h3><p data-i18n="flow1Text">Receive one secret physical role card. Never show it to other players.</p></div></article>
+        <article class="flow-step"><span class="flow-num">02</span><div><h3 data-i18n="flow2Title">Night phase</h3><p data-i18n="flow2Text">Close your eyes. The GM calls roles and resolves secret abilities.</p></div></article>
+        <article class="flow-step"><span class="flow-num">03</span><div><h3 data-i18n="flow3Title">Discuss & bluff</h3><p data-i18n="flow3Text">During Day, share clues, make claims, lie, defend and accuse.</p></div></article>
+        <article class="flow-step"><span class="flow-num">04</span><div><h3 data-i18n="flow4Title">Vote</h3><p data-i18n="flow4Text">Players vote to eliminate a suspect. Eliminated players keep all hidden information secret.</p></div></article>
+        <article class="flow-step"><span class="flow-num">05</span><div><h3 data-i18n="flow5Title">Final Bell</h3><p data-i18n="flow5Text">Good, Evil and Shadow Mage have different victory conditions. Survive your route.</p></div></article>
+      </div>
+
+      <div class="feature-grid">
+        <article class="card icon-card"><div class="big-icon">🎴</div><h3 data-i18n="featureRoleTitle">Know every role</h3><p data-i18n="featureRoleText">Role rules are public before the game. Your assigned card is private.</p></article>
+        <article class="card icon-card"><div class="big-icon">📵</div><h3 data-i18n="featurePhoneTitle">Phone-free round</h3><p id="phoneRule">Phones stay away once the round starts.</p></article>
+        <article class="card icon-card"><div class="big-icon">🧟</div><h3 data-i18n="featureZombieTitle">Eliminated early?</h3><p data-i18n="featureZombieText">Keep the fun going at the Zombie Dance area while the main round continues.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="roles">
+      <div class="section-head roles-head">
+        <div>
+          <div class="eyebrow" data-i18n="roleEyebrow">ROLE GUIDE</div>
+          <h2 id="roleTitle" data-i18n="roleTitle">Meet the 12 roles.</h2>
+          <p class="muted" data-i18n="roleDesc">8 Good · 3 Evil · 1 Independent. Tap a card to read the full ability and win condition.</p>
+        </div>
+      </div>
+      <div id="roleFilters" class="filters" role="tablist" aria-label="Role factions">
+        <button class="chip active" data-filter="ALL" type="button" data-i18n="filterAll">All</button>
+        <button class="chip" data-filter="GOOD" type="button" data-i18n="filterGood">Good</button>
+        <button class="chip" data-filter="EVIL" type="button" data-i18n="filterEvil">Evil</button>
+        <button class="chip" data-filter="INDEPENDENT" type="button" data-i18n="filterIndependent">Independent</button>
+      </div>
+      <div id="roleGrid" class="role-grid"><div class="notice" data-i18n="loadingRoles">Loading roles…</div></div>
+    </section>
+
+    <section class="section booking-section" id="booking">
+      <div class="section-head booking-head">
+        <div>
+          <div class="eyebrow" data-i18n="bookingEyebrow">ONLINE BOOKING</div>
+          <h2 data-i18n="bookingTitle">Choose your round.</h2>
+          <p class="muted" data-i18n="bookingDesc">A new reservation holds one seat for 15 minutes while you make payment.</p>
+        </div>
+        <button class="btn small" id="refreshSlots" type="button" data-i18n="refreshSlots">↻ Refresh</button>
+      </div>
+      <div id="cloudWarning" class="notice warning hidden"></div>
+      <div id="slotGrid" class="slot-grid"><div class="notice" data-i18n="loadingSlots">Loading slots…</div></div>
+    </section>
+
+    <section class="section compact">
+      <div class="grid two">
+        <div class="card rule-card">
+          <div class="eyebrow" data-i18n="rulesEyebrow">BEFORE YOU PLAY</div>
+          <h3 data-i18n="rulesTitle">Quick rules</h3>
+          <ul class="rules">
+            <li data-i18n="rule1">Keep your assigned role card secret. You may bluff.</li>
+            <li data-i18n="rule2">No phones during the main game.</li>
+            <li data-i18n="rule3">Close your eyes during Night. No peeking.</li>
+            <li data-i18n="rule4">Eliminated players must not reveal hidden information.</li>
+            <li data-i18n="rule5">Follow the GM’s instructions.</li>
+          </ul>
+        </div>
+        <div class="card policy-card">
+          <div class="eyebrow" data-i18n="policyEyebrow">BOOKING POLICY</div>
+          <h3 data-i18n="policyTitle">Non-refundable booking</h3>
+          <p class="muted" data-i18n="policyText">All bookings are non-refundable for no-shows, late arrivals, change of mind, or choosing the wrong time slot. Please arrive at least 5 minutes early.</p>
+          <p class="small muted" data-i18n="policyException">If the school or organiser cancels the event/session, affected participants will be contacted regarding the available arrangement.</p>
+          <p class="muted" id="contact"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact help-section" aria-labelledby="helpTitle">
+      <div class="card help-card">
+        <h3 id="helpTitle" data-i18n="helpTitle">Need help?</h3>
+        <p class="muted" data-i18n="helpText">If you have any questions about booking, payment or the event, feel free to contact me.</p>
+        <div class="help-links">
+          <!-- CONTACT LINKS: replace these two href values to update the destinations. -->
+          <div><a class="btn small" href="https://wa.me/60149740922?text=Hi%20I%20have%20a%20question%20about%20The%20Final%20Bell" target="_blank" rel="noopener noreferrer">WhatsApp</a><small class="muted" data-i18n="whatsappHint">Chat on WhatsApp</small></div>
+          <div><a class="btn small" href="https://instagram.com/yuyu17___" target="_blank" rel="noopener noreferrer">Instagram</a><small class="muted" data-i18n="instagramHint">View Instagram</small></div>
+        </div>
+        <p class="organiser-credit">Organised by yy</p>
+      </div>
+    </section>
+
+    <footer><span>THE FINAL BELL · Trust No One.</span><span class="footer-note" data-i18n="footerNote">Play fair · Respect the GM · Have fun</span></footer>
+  </main>
+
+  <dialog id="roleDialog" class="dialog role-dialog">
+    <div class="dialog-card role-detail-card">
+      <button class="close" id="closeRole" type="button" aria-label="Close">×</button>
+      <div id="roleDialogContent"></div>
+    </div>
+  </dialog>
+
+  <dialog id="gameFlowDialog" class="dialog image-dialog">
+    <div class="image-dialog-card">
+      <button class="close image-close" id="closeGameFlow" type="button" aria-label="Close">×</button>
+      <img src="./assets/game-flow.webp" alt="THE FINAL BELL game flow infographic">
+    </div>
+  </dialog>
+
+  <dialog id="reserveDialog" class="dialog">
+    <div class="dialog-card">
+      <button class="close" id="closeReserve" type="button" aria-label="Close">×</button>
+      <div class="eyebrow" data-i18n="reserveStep">STEP 1 · RESERVE</div>
+      <h2 id="reserveTitle">Reserve a seat</h2>
+      <form id="reserveForm">
+        <input type="hidden" id="slotId">
+        <label><span data-i18n="nameLabel">Name / Nickname</span><input id="name" required maxlength="80" autocomplete="name"></label>
+        <label><span data-i18n="contactLabel">WhatsApp / Contact</span><input id="contactInput" maxlength="120" autocomplete="tel" data-i18n-placeholder="contactPlaceholder" placeholder="Recommended for booking updates"></label>
+        <label class="policy-check"><input type="checkbox" id="refundAgree"> <span data-i18n="refundAgree">I understand that my booking is non-refundable, including no-shows and late arrivals.</span></label>
+        <p class="small muted" data-i18n="bookingReminder">Early Bird RM9.90 · Regular RM15.00 · Non-refundable · Please arrive 5 minutes early</p>
+        <button class="btn primary full" id="reserveBtn" type="submit" data-i18n="reserveButton">Reserve for 15 minutes</button>
+        <p class="form-msg" id="reserveMsg"></p>
+      </form>
+    </div>
+  </dialog>
+
+  <dialog id="paymentDialog" class="dialog">
+    <div class="dialog-card">
+      <button class="close" id="closePayment" type="button" aria-label="Close">×</button>
+      <div class="eyebrow" data-i18n="paymentStep">STEP 2 · PAYMENT</div>
+      <h2 data-i18n="seatReserved">Seat reserved</h2>
+      <div class="booking-ref"><span data-i18n="bookingReference">Booking reference</span><strong id="bookingRef">—</strong></div>
+      <div class="hold"><span data-i18n="reservationHold">Reservation hold</span><strong id="holdTimer">15:00</strong></div>
+      <div id="paymentQrWrap" class="payment-qr"></div>
+      <div class="payment-info"><div><span data-i18n="amountLabel">Amount</span><strong id="amountDue">RM9.90</strong></div><div><span data-i18n="recipientLabel">Recipient</span><strong id="recipient">Check before paying</strong></div></div>
+      <p class="warning-text" data-i18n="paymentWarning">Always verify the recipient name in your banking app before confirming payment.</p>
+      <p class="muted" id="paymentNote"></p>
+      <label><span data-i18n="paymentRefLabel">Payment / transaction reference *</span><input id="paymentRef" maxlength="120" required data-i18n-placeholder="paymentRefPlaceholder" placeholder="Enter the reference shown in your banking app"></label>
+      <p class="small muted" data-i18n="paymentRefHelp">After making payment, enter the transaction reference shown in your banking app.</p>
+      <button class="btn primary full" id="markPaid" type="button" data-i18n="iPaid">I have paid</button>
+      <button class="btn full" id="cancelHold" type="button" data-i18n="cancelReservation">Cancel reservation</button>
+      <p class="form-msg" id="paymentMsg"></p>
+    </div>
+  </dialog>
+
+  <dialog id="statusDialog" class="dialog">
+    <div class="dialog-card">
+      <button class="close" id="closeStatus" type="button" aria-label="Close">×</button>
+      <div class="eyebrow" data-i18n="statusEyebrow">BOOKING STATUS</div>
+      <h2 id="statusTitle">Booking saved</h2>
+      <div class="status-box" id="statusBox"></div>
+      <button class="btn primary full hidden" id="leaveFeedback" type="button" data-i18n="leaveFeedback">Leave Feedback</button>
+      <div class="notice good hidden" id="feedbackDone" data-i18n="feedbackThanks">Feedback submitted ✓ Thank you!</div>
+      <button class="btn full" id="checkAgain" type="button" data-i18n="checkAgain">Check status again</button>
+    </div>
+  </dialog>
+
+  <dialog id="feedbackDialog" class="dialog">
+    <div class="dialog-card feedback-card">
+      <button class="close" id="closeFeedback" type="button" aria-label="Close">×</button>
+      <div class="eyebrow" data-i18n="feedbackEyebrow">AFTER THE GAME</div>
+      <h2 data-i18n="feedbackTitle">How was the round?</h2>
+      <p class="muted" data-i18n="feedbackDesc">Your feedback helps improve the next session. One response per verified booking.</p>
+      <form id="feedbackForm">
+        <div class="field-block">
+          <label data-i18n="overallFun">Overall fun *</label>
+          <div class="rating-row" id="ratingBtns"></div>
+          <input type="hidden" id="feedbackRating">
+        </div>
+        <div class="feedback-grid">
+          <label><span data-i18n="difficultyLabel">Difficulty</span><select id="feedbackDifficulty"><option value="Too easy" data-i18n="tooEasy">Too easy</option><option value="Just right" selected data-i18n="justRight">Just right</option><option value="Too hard" data-i18n="tooHard">Too hard</option></select></label>
+          <label><span data-i18n="durationLabel">25-minute duration</span><select id="feedbackDuration"><option value="Too short" data-i18n="tooShort">Too short</option><option value="Just right" selected data-i18n="justRight">Just right</option><option value="Too long" data-i18n="tooLong">Too long</option></select></label>
+          <label><span data-i18n="favoriteRoleLabel">Favourite role</span><select id="feedbackFavorite"><option value="" data-i18n="chooseOne">Choose one</option></select></label>
+          <label><span data-i18n="payAgainLabel">Would you pay RM15 again?</span><select id="feedbackPayAgain"><option value="Yes" data-i18n="yes">Yes</option><option value="Maybe" data-i18n="maybe">Maybe</option><option value="No" data-i18n="no">No</option></select></label>
+        </div>
+        <label><span data-i18n="commentLabel">Comment / suggestion</span><textarea id="feedbackComment" maxlength="500" data-i18n-placeholder="commentPlaceholder" placeholder="What was fun? What was confusing?"></textarea></label>
+        <button class="btn primary full" id="feedbackSubmit" type="submit" data-i18n="submitFeedback">Submit Feedback</button>
+        <p class="form-msg" id="feedbackMsg"></p>
+      </form>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="./config.js"></script>
+  <script src="./app.js?v=20260912-slot-flow"></script>
+</body>
+</html>
