@@ -54,18 +54,18 @@ const I18N={
 const t=(k)=>I18N[LANG]?.[k]??I18N.en[k]??k;
 
 const ROLE_ZH={
-  1:{name:'占卜师',en:'Fortune Teller',ability:'命运连结',text:'每局最多 2 次。夜晚选择 2 名玩家，GM 会告诉你两人属于「相同阵营」或「不同阵营」。',win:'在 Final Bell 前淘汰全部 3 名 Evil，Good 立即获胜。'},
-  2:{name:'侦探',en:'Detective',ability:'调查',text:'每局 1 次。夜晚调查 1 名玩家，GM 回答 GOOD 或 NOT GOOD。Shadow Mage 会被视为 NOT GOOD。',win:'在 Final Bell 前淘汰全部 3 名 Evil，Good 立即获胜。'},
-  3:{name:'白女巫',en:'White Witch',ability:'守护',text:'每局 1 次。夜晚保护 1 名玩家，使其免受普通 Evil 夜杀。不能保护自己。',win:'在 Final Bell 前淘汰全部 3 名 Evil，Good 立即获胜。'},
-  4:{name:'守夜人',en:'Night Watcher',ability:'监视',text:'每局 1 次。所有夜晚行动结束后选择 1 名玩家，GM 只会告诉你该玩家当晚是否使用了「个人角色技能」。普通 Evil 阵营夜杀不算个人技能。',win:'在 Final Bell 前淘汰全部 3 名 Evil，Good 立即获胜。'},
-  5:{name:'幽灵',en:'Ghost',ability:'最后低语',text:'当你被淘汰时，只有 Ghost 可以留下大约 10 秒的最后发言，然后离开主游戏。',win:'在 Final Bell 前淘汰全部 3 名 Evil，Good 立即获胜。'},
-  6:{name:'黑猫',en:'Black Cat',ability:'九命',text:'第一次受到普通 Evil 夜杀时不会死亡。白天投票淘汰仍然会正常出局。',win:'在 Final Bell 前淘汰全部 3 名 Evil，Good 立即获胜。'},
-  7:{name:'南瓜王',en:'Pumpkin King',ability:'王权之票',text:'每局 1 次。在白天投票前发动，本轮你的票算 2 票。',win:'在 Final Bell 前淘汰全部 3 名 Evil，Good 立即获胜。'},
-  8:{name:'木乃伊',en:'Mummy',ability:'古老诅咒',text:'每局 1 次。夜晚诅咒 1 名玩家；该玩家第二天仍然可以发言，但投票不计入。',win:'在 Final Bell 前淘汰全部 3 名 Evil，Good 立即获胜。'},
-  9:{name:'狼人',en:'Werewolf',ability:'血月',text:'狼人存活时是 Evil 的 Pack Leader。每局 1 次发动 Blood Moon，让当晚 Evil 夜杀无视普通保护或夜杀免疫，包括 White Witch 的 Protection 与 Black Cat 的 Nine Lives。狼人出局后，其余 Evil 仍然可以继续普通夜杀。',win:'只要 4 名 God 全部出局，或 4 名 Civilian 全部出局，Evil 立即获胜。'},
+  1:{name:'占卜师',en:'Fortune Teller',ability:'命运连结',text:'每局最多 2 次。夜晚选择 2 名玩家，GM 会告诉你两人属于「相同阵营」或「不同阵营」。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
+  2:{name:'侦探',en:'Detective',ability:'调查',text:'每局 1 次。夜晚调查 1 名玩家，GM 回答 GOOD 或 NOT GOOD。Shadow Mage 会被视为 NOT GOOD。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
+  3:{name:'白女巫',en:'White Witch',ability:'守护',text:'每局 1 次。夜晚保护 1 名玩家，使其免受普通 Evil 夜杀。不能保护自己。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
+  4:{name:'守夜人',en:'Night Watcher',ability:'监视',text:'每局 1 次。所有夜晚行动结束后选择 1 名玩家，GM 只会告诉你该玩家当晚是否使用了「个人角色技能」。普通 Evil 阵营夜杀不算个人技能。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
+  5:{name:'幽灵',en:'Ghost',ability:'最后低语',text:'当你被淘汰时，只有 Ghost 可以留下大约 10 秒的最后发言，然后离开主游戏。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
+  6:{name:'黑猫',en:'Black Cat',ability:'九命',text:'第一次受到普通 Evil 夜杀时不会死亡。白天投票淘汰仍然会正常出局。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
+  7:{name:'南瓜王',en:'Pumpkin King',ability:'王权之票',text:'每局 1 次。在白天投票前发动，本轮你的票算 2 票。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
+  8:{name:'木乃伊',en:'Mummy',ability:'古老诅咒',text:'每局 1 次。夜晚诅咒 1 名玩家；该玩家第二天仍然可以发言，但投票不计入。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
+  9:{name:'狼人',en:'Werewolf',ability:'血月',text:'狼人存活时是 Evil 的 Pack Leader。每局 1 次发动 Blood Moon，让当晚 Evil 夜杀无视普通保护或夜杀免疫，包括 White Witch 的 Protection、Black Cat 的 Nine Lives，以及 Shadow Mage 的 Shadow Veil。狼人出局后，其余 Evil 仍然可以继续普通夜杀。',win:'只要 4 名 God 全部出局，或 4 名 Civilian 全部出局，Evil 立即获胜。'},
   10:{name:'蒙面客',en:'Masked Guest',ability:'假面',text:'第一次受到阵营调查时，会被视为 GOOD。该次调查后伪装破裂，之后的调查会正常显示 Evil。',win:'只要 4 名 God 全部出局，或 4 名 Civilian 全部出局，Evil 立即获胜。'},
-  11:{name:'蜘蛛女王',en:'Spider Queen',ability:'蛛网',text:'每局 1 次。夜晚选择 1 名玩家，使该玩家当晚的个人角色技能失效。不会取消正常发言、白天投票或 Evil 阵营夜杀。',win:'只要 4 名 God 全部出局，或 4 名 Civilian 全部出局，Evil 立即获胜。'},
-  12:{name:'影法师',en:'Shadow Mage',ability:'暗影帷幕',text:'当前 Playtest 技能：每局 1 次，夜晚主动发动。如果当晚被普通 Evil 夜杀，你会存活。白天被投票淘汰仍然会出局。',win:'活到 Final Bell。铃声响起时仍然存活，就触发 Shadow Ending，并由 Shadow Mage 单独获胜。'}
+  11:{name:'蜘蛛女王',en:'Spider Queen',ability:'蛛网',text:'每局 1 次。夜晚选择 1 名玩家，使该玩家当晚的个人角色技能失效。如果该玩家在被蛛网影响时尝试使用每局限 1 次的角色技能，该次使用次数仍会被消耗。不会取消正常发言、白天投票或 Evil 阵营夜杀。',win:'只要 4 名 God 全部出局，或 4 名 Civilian 全部出局，Evil 立即获胜。'},
+  12:{name:'影法师',en:'Shadow Mage',ability:'暗影帷幕',text:'每局 1 次，夜晚发动 Shadow Veil。如果当晚被普通 Evil 夜杀选为目标，你会存活。如果没有被选为目标，该次使用次数仍会被消耗。白天被投票淘汰仍然会出局。Blood Moon 会无视 Shadow Veil。',win:'Final Bell 响起时，如果 Good 和 Evil 均尚未获胜，而你仍然存活，就触发 Shadow Ending，并由你单独获胜。'}
 };
 
 function money(v){return `${C.currency||'RM'}${Number(v||0).toFixed(2)}`}

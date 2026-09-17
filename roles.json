@@ -6,7 +6,7 @@
     "faction": "GOOD",
     "ability_name": "Fate Link",
     "ability_text": "Up to 2 times per game, choose 2 players at night. The GM tells you SAME FACTION or DIFFERENT FACTION.",
-    "win_condition": "Good wins if all 3 Evil players are eliminated before the Final Bell.",
+    "win_condition": "Good wins immediately when all 3 Evil players are eliminated.",
     "role_type": "GOD"
   },
   {
@@ -16,7 +16,7 @@
     "faction": "GOOD",
     "ability_name": "Investigation",
     "ability_text": "Once per game at night, investigate 1 player. The GM answers GOOD or NOT GOOD. Shadow Mage counts as NOT GOOD.",
-    "win_condition": "Good wins if all 3 Evil players are eliminated before the Final Bell.",
+    "win_condition": "Good wins immediately when all 3 Evil players are eliminated.",
     "role_type": "GOD"
   },
   {
@@ -26,7 +26,7 @@
     "faction": "GOOD",
     "ability_name": "Protection",
     "ability_text": "Once per game at night, protect 1 player from a normal Evil night kill. You cannot protect yourself.",
-    "win_condition": "Good wins if all 3 Evil players are eliminated before the Final Bell.",
+    "win_condition": "Good wins immediately when all 3 Evil players are eliminated.",
     "role_type": "GOD"
   },
   {
@@ -36,7 +36,7 @@
     "faction": "GOOD",
     "ability_name": "Watch",
     "ability_text": "Once per game, after night actions choose 1 player. Learn whether that player used a personal Role Skill that night. The normal Evil faction kill does not count as a personal Role Skill.",
-    "win_condition": "Good wins if all 3 Evil players are eliminated before the Final Bell.",
+    "win_condition": "Good wins immediately when all 3 Evil players are eliminated.",
     "role_type": "GOD"
   },
   {
@@ -46,7 +46,7 @@
     "faction": "GOOD",
     "ability_name": "Last Whisper",
     "ability_text": "When eliminated, you may give one final statement of about 10 seconds before leaving the main game.",
-    "win_condition": "Good wins if all 3 Evil players are eliminated before the Final Bell.",
+    "win_condition": "Good wins immediately when all 3 Evil players are eliminated.",
     "role_type": "CIVILIAN"
   },
   {
@@ -56,7 +56,7 @@
     "faction": "GOOD",
     "ability_name": "Nine Lives",
     "ability_text": "The first normal Evil night kill against you fails. Daytime vote elimination still kills you normally.",
-    "win_condition": "Good wins if all 3 Evil players are eliminated before the Final Bell.",
+    "win_condition": "Good wins immediately when all 3 Evil players are eliminated.",
     "role_type": "CIVILIAN"
   },
   {
@@ -66,7 +66,7 @@
     "faction": "GOOD",
     "ability_name": "Royal Vote",
     "ability_text": "Once per game before a daytime vote, activate this ability. Your vote counts as 2 votes for that round.",
-    "win_condition": "Good wins if all 3 Evil players are eliminated before the Final Bell.",
+    "win_condition": "Good wins immediately when all 3 Evil players are eliminated.",
     "role_type": "CIVILIAN"
   },
   {
@@ -76,7 +76,7 @@
     "faction": "GOOD",
     "ability_name": "Ancient Curse",
     "ability_text": "Once per game at night, curse 1 player. That player may still speak the next Day, but their vote does not count.",
-    "win_condition": "Good wins if all 3 Evil players are eliminated before the Final Bell.",
+    "win_condition": "Good wins immediately when all 3 Evil players are eliminated.",
     "role_type": "CIVILIAN"
   },
   {
@@ -85,8 +85,8 @@
     "emoji": "🐺",
     "faction": "EVIL",
     "ability_name": "Blood Moon",
-    "ability_text": "While alive, you are the Pack Leader for the Evil night kill. Once per game, Blood Moon makes the Evil night kill ignore normal protection or night-kill immunity, including White Witch Protection and Black Cat Nine Lives. If you die, the remaining Evil players can still perform the normal Evil night kill.",
-    "win_condition": "Evil wins if all 4 God roles OR all 4 Civilian roles are eliminated.",
+    "ability_text": "While alive, you are the Pack Leader for the Evil night kill. Once per game, Blood Moon makes the Evil night kill ignore normal protection or night-kill immunity, including White Witch Protection, Black Cat Nine Lives, and Shadow Mage's Shadow Veil. If you die, the remaining Evil players can still perform the normal Evil night kill.",
+    "win_condition": "Evil wins immediately when all 4 God roles OR all 4 Civilian roles are eliminated.",
     "role_type": "EVIL"
   },
   {
@@ -96,7 +96,7 @@
     "faction": "EVIL",
     "ability_name": "False Face",
     "ability_text": "The first faction investigation against you treats you as GOOD. After that first investigation, the disguise breaks and later investigations reveal Evil normally.",
-    "win_condition": "Evil wins if all 4 God roles OR all 4 Civilian roles are eliminated.",
+    "win_condition": "Evil wins immediately when all 4 God roles OR all 4 Civilian roles are eliminated.",
     "role_type": "EVIL"
   },
   {
@@ -105,8 +105,8 @@
     "emoji": "🕷️",
     "faction": "EVIL",
     "ability_name": "Web",
-    "ability_text": "Once per game at night, choose 1 player. That player's personal Role Skill fails that Night. Web does not cancel normal speaking, daytime voting, or the Evil faction night kill.",
-    "win_condition": "Evil wins if all 4 God roles OR all 4 Civilian roles are eliminated.",
+    "ability_text": "Once per game at night, choose 1 player. That player's personal Role Skill fails that Night. If they attempt a once-per-game Role Skill while Webbed, that use is still consumed. Web does not cancel normal speaking, daytime voting, or the Evil faction night kill.",
+    "win_condition": "Evil wins immediately when all 4 God roles OR all 4 Civilian roles are eliminated.",
     "role_type": "EVIL"
   },
   {
@@ -115,8 +115,8 @@
     "emoji": "🌑",
     "faction": "INDEPENDENT",
     "ability_name": "Shadow Veil",
-    "ability_text": "Current playtest ability: once per game, activate at Night. If targeted by a normal Evil night kill that Night, you survive. Daytime vote elimination still kills you.",
-    "win_condition": "Survive until the Final Bell. If alive when it rings, trigger the Shadow Ending and win alone.",
+    "ability_text": "Once per game, activate Shadow Veil at Night. If you are targeted by a normal Evil night kill that Night, you survive. If you are not targeted, the use is still spent. Daytime vote elimination still kills you. Blood Moon bypasses Shadow Veil.",
+    "win_condition": "If neither Good nor Evil has already won when the Final Bell rings, and you are still alive, trigger the Shadow Ending and win alone.",
     "role_type": "INDEPENDENT"
   }
 ]
