@@ -112,6 +112,11 @@
         <button class="btn small" id="refreshSlots" type="button" data-i18n="refreshSlots">↻ Refresh</button>
       </div>
       <div id="cloudWarning" class="notice warning hidden"></div>
+      <div id="bookingPrelaunch" class="notice hidden">
+        <p><strong>Early Bird RM9.90</strong><br><span data-i18n="bookingPrelaunchLimit">First 12 valid bookings only</span></p>
+        <p><strong>Regular RM15</strong></p>
+        <p><span data-i18n="bookingPrelaunchRounds">Five game rounds will be available.</span><br><span data-i18n="bookingPrelaunchReturn">Please return to this page when booking opens.</span></p>
+      </div>
       <div id="slotGrid" class="slot-grid"><div class="notice" data-i18n="loadingSlots">Loading slots…</div></div>
     </section>
 
@@ -242,7 +247,7 @@
   </dialog>
 
   <div id="toast" class="toast hidden"></div>
-  <script src="./config.js"></script>
-  <script src="./app.js?v=20260912-slot-flow"></script>
+  <script src="./config.js?v=20260917-booking-toggle"></script>
+  <script src="./app.js?v=20260917-booking-toggle"></script>
 </body>
 </html>

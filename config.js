@@ -1,6 +1,8 @@
 window.HALLOWEEN_CONFIG = {
   "supabaseUrl": "https://ezhvougnxruujcmedmio.supabase.co",
   "localApi": false,
+  "bookingEnabled": false,
+  "bookingOpenText": "BOOKING OPENS IN OCTOBER",
   "publishableKey": "sb_publishable_vAw5eBmyKOtpe1aKX5pv8w_BO96uikA",
   "eventName": "THE FINAL BELL",
   "eventSubtitle": "12 Players · Hidden Roles · One Final Bell",

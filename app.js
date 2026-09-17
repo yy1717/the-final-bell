@@ -7,6 +7,7 @@ if(!['en','zh'].includes(LANG)) LANG='en';
 
 const I18N={
   en:{
+    bookingPrelaunchTitle:'BOOKING OPENS IN OCTOBER',bookingPrelaunchLimit:'First 12 valid bookings only',bookingPrelaunchRounds:'Five game rounds will be available.',bookingPrelaunchReturn:'Please return to this page when booking opens.',
     slotClosed:'Unavailable',slotsLoadError:'Booking slots could not be loaded. Please refresh.',
     earlyBirdLabel:'Early Bird',regularLabel:'Regular',helpTitle:'Need help?',helpText:'If you have any questions about booking, payment or the event, feel free to contact me.',whatsappHint:'Chat on WhatsApp',instagramHint:'View Instagram',
     navHow:'How to Play',navRoles:'Roles',navBooking:'Booking',heroEyebrow:'HALLOWEEN SPECIAL · HIDDEN ROLE GAME',players:'Players',minutes:'min',bookNow:'BOOK A SLOT',learnGame:'HOW TO PLAY',eventInfo:'EVENT INFO',dateLabel:'📅 Date',timeLabel:'🕒 Time',venueLabel:'📍 Venue',ticketLabel:'🎟 Ticket',gameLabel:'⏱ Game',arriveEarly:'Please arrive 5 minutes early.',
@@ -28,6 +29,7 @@ const I18N={
     phoneDefault:'Phones stay away once the round starts.',paymentNoteDefault:'Scan the payment QR, pay the amount shown, then enter the transaction reference from your banking app.',recipientDefault:'Verify in banking app',heroSubtitle:'12 Players · Hidden Roles · One Final Bell'
   },
   zh:{
+    bookingPrelaunchTitle:'预订将于十月开放',bookingPrelaunchLimit:'首12个有效预订名额',bookingPrelaunchRounds:'活动将开放5个游戏场次。',bookingPrelaunchReturn:'请在预订开放后再次回来完成报名。',
     slotClosed:'暂不可预约',slotsLoadError:'无法加载预约场次，请刷新重试。',
     earlyBirdLabel:'早鸟票',regularLabel:'普通票',helpTitle:'需要帮助？',helpText:'如果你对预订、付款或活动有任何疑问，欢迎联系我。',whatsappHint:'通过 WhatsApp 聊天',instagramHint:'查看 Instagram',
     navHow:'怎么玩',navRoles:'角色',navBooking:'预约',heroEyebrow:'万圣节限定 · 隐藏身份推理游戏',players:'玩家',minutes:'分钟',bookNow:'预约场次',learnGame:'查看玩法',eventInfo:'活动资料',dateLabel:'📅 日期',timeLabel:'🕒 时间',venueLabel:'📍 地点',ticketLabel:'🎟 票价',gameLabel:'⏱ 游戏',arriveEarly:'请至少提前 5 分钟到场。',
@@ -77,6 +79,23 @@ function typeLabel(type){return type?t('type'+type):''}
 function phoneCopy(){return LANG==='zh'?t('phoneDefault'):(C.phoneRule||t('phoneDefault'))}
 function paymentNoteCopy(){return LANG==='zh'?t('paymentNoteDefault'):(C.paymentNote||t('paymentNoteDefault'))}
 
+function bookingIsEnabled(){return C.bookingEnabled===true}
+function bookingOpenMessage(){return LANG==='zh'?t('bookingPrelaunchTitle'):(C.bookingOpenText||t('bookingPrelaunchTitle'))}
+function applyBookingMode(){
+  const enabled=bookingIsEnabled();
+  $('[data-i18n="bookNow"]').classList.toggle('hidden',!enabled);
+  $('#refreshSlots').classList.toggle('hidden',!enabled);
+  $('#slotGrid').classList.toggle('hidden',!enabled);
+  $('#bookingPrelaunch').classList.toggle('hidden',enabled);
+  $('[data-i18n="bookingDesc"]').classList.toggle('hidden',!enabled);
+  $('[data-i18n="bookingTitle"]').textContent=enabled?t('bookingTitle'):bookingOpenMessage();
+  if(!enabled){
+    $('#cloudWarning').classList.add('hidden');
+    $('#reserveBtn').disabled=true;
+    if($('#reserveDialog').open)$('#reserveDialog').close();
+  }
+}
+
 function applyLanguage(){
   document.documentElement.lang=LANG==='zh'?'zh-CN':'en';
   $$('[data-i18n]').forEach(el=>{const key=el.dataset.i18n;if(I18N[LANG]?.[key]!=null)el.textContent=t(key)});
@@ -94,6 +113,7 @@ function applyLanguage(){
   if(LAST_STATUS&&$('#statusDialog').open)renderStatus(LAST_STATUS);
   if(HOLD&&$('#paymentDialog').open){$('#recipient').textContent=C.paymentRecipient||t('recipientDefault')}
   localStorage.setItem('final_bell_lang',LANG);
+  applyBookingMode();
 }
 $$('[data-lang]').forEach(b=>b.addEventListener('click',()=>{LANG=b.dataset.lang;applyLanguage()}));
 
@@ -111,13 +131,13 @@ function fillFavoriteRoles(){const s=$('#feedbackFavorite');if(!s)return;s.inner
 $$('[data-filter]').forEach(b=>b.addEventListener('click',()=>{$$('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderRoles(b.dataset.filter)}));
 
 function slotIsOpen(s){return Boolean(s)&&Number.isSafeInteger(Number(s.id))&&Number(s.id)>0&&Number.isFinite(Number(s.available))&&Number(s.available)>0&&![false,0,'false','0'].includes(s.active)&&(s.status==null||['upcoming','boarding','open'].includes(String(s.status).toLowerCase()))}
-function renderSlots(){if(!SLOTS.length){$('#slotGrid').innerHTML=`<div class="notice">${esc(t('noSlots'))}</div>`;return}$('#slotGrid').innerHTML=SLOTS.map(s=>{const left=Number(s.available||0),open=slotIsOpen(s),full=Number.isFinite(left)&&left<=0;const seatText=!open?t(full?'full':'slotClosed'):(LANG==='zh'?`${left}${t('seatsLeft')}`:`${left} ${left===1?t('seatLeft'):t('seatsLeft')}`);const selected=open&&String(s.id)===$('#slotId').value;return `<article class="slot ${open?'':'full'}${selected?' is-selected':''}" data-slot-id="${esc(s.id)}" aria-disabled="${!open}"${selected?' aria-current="true"':''}><div><div class="eyebrow">${esc(t('round'))}</div><h3>${esc(s.start_time)}</h3><div class="seats slot-status">${esc(seatText)}</div>${s.notes?`<p class="muted">${esc(s.notes)}</p>`:''}<small class="price">${money(s.price)} ${esc(t('perPlayer'))}</small></div><button type="button" class="btn ${open?'primary':''}" ${open?'':'disabled'} data-reserve="${esc(s.id)}" aria-haspopup="dialog" aria-controls="reserveDialog">${esc(open?t('reserve'):t(full?'full':'slotClosed'))}</button></article>`}).join('')}
-async function loadSlots(){if(!C.supabaseUrl||!C.publishableKey){SLOTS=[];$('#cloudWarning').textContent=t('notConfigured');$('#cloudWarning').classList.remove('hidden');$('#slotGrid').innerHTML='';return}try{const slots=await rpc('public_slot_availability',{});if(!Array.isArray(slots)||slots.some(s=>!s||typeof s!=='object'))throw Error(t('slotsLoadError'));SLOTS=slots;$('#cloudWarning').classList.add('hidden');renderSlots()}catch(e){SLOTS=[];$('#slotGrid').innerHTML=`<div class="notice warning" role="alert">${esc(t('slotsLoadError'))} ${esc(e.message||'')}</div>`}}
+function renderSlots(){if(!bookingIsEnabled()){applyBookingMode();return}if(!SLOTS.length){$('#slotGrid').innerHTML=`<div class="notice">${esc(t('noSlots'))}</div>`;return}$('#slotGrid').innerHTML=SLOTS.map(s=>{const left=Number(s.available||0),open=slotIsOpen(s),full=Number.isFinite(left)&&left<=0;const seatText=!open?t(full?'full':'slotClosed'):(LANG==='zh'?`${left}${t('seatsLeft')}`:`${left} ${left===1?t('seatLeft'):t('seatsLeft')}`);const selected=open&&String(s.id)===$('#slotId').value;return `<article class="slot ${open?'':'full'}${selected?' is-selected':''}" data-slot-id="${esc(s.id)}" aria-disabled="${!open}"${selected?' aria-current="true"':''}><div><div class="eyebrow">${esc(t('round'))}</div><h3>${esc(s.start_time)}</h3><div class="seats slot-status">${esc(seatText)}</div>${s.notes?`<p class="muted">${esc(s.notes)}</p>`:''}<small class="price">${money(s.price)} ${esc(t('perPlayer'))}</small></div><button type="button" class="btn ${open?'primary':''}" ${open?'':'disabled'} data-reserve="${esc(s.id)}" aria-haspopup="dialog" aria-controls="reserveDialog">${esc(open?t('reserve'):t(full?'full':'slotClosed'))}</button></article>`}).join('')}
+async function loadSlots(){if(!bookingIsEnabled()){applyBookingMode();return}if(!C.supabaseUrl||!C.publishableKey){SLOTS=[];$('#cloudWarning').textContent=t('notConfigured');$('#cloudWarning').classList.remove('hidden');$('#slotGrid').innerHTML='';return}try{const slots=await rpc('public_slot_availability',{});if(!Array.isArray(slots)||slots.some(s=>!s||typeof s!=='object'))throw Error(t('slotsLoadError'));SLOTS=slots;$('#cloudWarning').classList.add('hidden');renderSlots()}catch(e){SLOTS=[];$('#slotGrid').innerHTML=`<div class="notice warning" role="alert">${esc(t('slotsLoadError'))} ${esc(e.message||'')}</div>`}}
 // Delegate to the persistent grid so the whole card and its native keyboard-
 // accessible button work after every availability refresh or language change.
 $('#slotGrid').addEventListener('click',e=>{const card=e.target.closest('[data-slot-id]');if(!card||!$('#slotGrid').contains(card))return;openReserve(Number(card.dataset.slotId))});
 $('#refreshSlots').onclick=loadSlots;
-function openReserve(id){const s=SLOTS.find(x=>Number(x.id)===id);if(!slotIsOpen(s))return;$('#slotId').value=String(s.id);$('#reserveTitle').textContent=(LANG==='zh'?'预约 · ':'Reserve · ')+[s.event_date||s.date||C.eventDate,s.start_time].filter(Boolean).join(' · ');$('#reserveMsg').textContent='';$('#refundAgree').checked=false;$$('#slotGrid [data-slot-id]').forEach(card=>{const selected=card.dataset.slotId===String(s.id);card.classList.toggle('is-selected',selected);if(selected)card.setAttribute('aria-current','true');else card.removeAttribute('aria-current')});if(!$('#reserveDialog').open)$('#reserveDialog').showModal()}
+function openReserve(id){if(!bookingIsEnabled())return;const s=SLOTS.find(x=>Number(x.id)===id);if(!slotIsOpen(s))return;$('#slotId').value=String(s.id);$('#reserveTitle').textContent=(LANG==='zh'?'预约 · ':'Reserve · ')+[s.event_date||s.date||C.eventDate,s.start_time].filter(Boolean).join(' · ');$('#reserveMsg').textContent='';$('#refundAgree').checked=false;$$('#slotGrid [data-slot-id]').forEach(card=>{const selected=card.dataset.slotId===String(s.id);card.classList.toggle('is-selected',selected);if(selected)card.setAttribute('aria-current','true');else card.removeAttribute('aria-current')});if(!$('#reserveDialog').open)$('#reserveDialog').showModal()}
 
 function closeDialog(d){if(d?.open)d.close()}
 $('#closeRole').onclick=()=>closeDialog($('#roleDialog'));
@@ -131,7 +151,7 @@ $$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')$$('dialog[open]').forEach(d=>d.close())});
 
-$('#reserveForm').addEventListener('submit',async e=>{e.preventDefault();if(!$('#refundAgree').checked){$('#reserveMsg').textContent=t('agreePolicy');return}const btn=$('#reserveBtn');btn.disabled=true;$('#reserveMsg').textContent=t('reserving');try{HOLD=await rpc('public_create_hold',{p_slot_id:Number($('#slotId').value),p_name:$('#name').value.trim(),p_contact:$('#contactInput').value.trim()});localStorage.setItem('final_bell_booking',JSON.stringify(HOLD));$('#reserveDialog').close();showPayment(HOLD);loadSlots()}catch(err){$('#reserveMsg').textContent=err.message}finally{btn.disabled=false}});
+$('#reserveForm').addEventListener('submit',async e=>{e.preventDefault();if(!bookingIsEnabled()){$('#reserveMsg').textContent=bookingOpenMessage();return}if(!$('#refundAgree').checked){$('#reserveMsg').textContent=t('agreePolicy');return}const btn=$('#reserveBtn');btn.disabled=true;$('#reserveMsg').textContent=t('reserving');try{HOLD=await rpc('public_create_hold',{p_slot_id:Number($('#slotId').value),p_name:$('#name').value.trim(),p_contact:$('#contactInput').value.trim()});localStorage.setItem('final_bell_booking',JSON.stringify(HOLD));$('#reserveDialog').close();showPayment(HOLD);loadSlots()}catch(err){$('#reserveMsg').textContent=err.message}finally{btn.disabled=false}});
 
 function showPayment(h){HOLD=h;$('#bookingRef').textContent=h.booking_ref;$('#amountDue').textContent=money(h.amount_due);$('#recipient').textContent=C.paymentRecipient||t('recipientDefault');$('#paymentNote').textContent=paymentNoteCopy();$('#paymentRef').value='';$('#paymentMsg').textContent='';if(C.paymentQr){$('#paymentQrWrap').innerHTML=`<img src="${esc(C.paymentQr)}" alt="Payment QR">`}else{$('#paymentQrWrap').innerHTML=`<div class="notice warning">${esc(t('paymentQrMissing'))}</div>`}startHoldTimer(h.expires_at);$('#paymentDialog').showModal()}
 function startHoldTimer(exp){clearInterval(holdInterval);const tick=()=>{const sec=Math.max(0,Math.floor((new Date(exp).getTime()-Date.now())/1000));$('#holdTimer').textContent=`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;if(sec<=0){clearInterval(holdInterval);$('#paymentMsg').textContent=t('reservationExpired');$('#markPaid').disabled=true}};tick();holdInterval=setInterval(tick,1000);$('#markPaid').disabled=false}
