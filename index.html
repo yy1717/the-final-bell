@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0b0810">
   <title>THE FINAL BELL</title>
-  <link rel="stylesheet" href="./styles.css?v=20260912-slot-flow">
+  <link rel="stylesheet" href="./styles.css?v=20260920-header-hero">
 </head>
 <body>
   <div class="pixel-noise" aria-hidden="true"></div>
-  <main class="shell">
-    <nav class="nav" aria-label="Main navigation">
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
       <a class="brand" href="#top"><span class="brand-icon">🔔</span><span id="brandName">THE FINAL BELL</span></a>
       <div class="nav-right">
         <div class="nav-links">
@@ -24,6 +24,9 @@
         </div>
       </div>
     </nav>
+  </header>
+
+  <main class="shell">
 
     <section class="hero" id="top">
       <div class="hero-copy">
@@ -53,6 +56,23 @@
         </div></div>
         <div><span data-i18n="gameLabel">⏱ Game</span><strong id="duration">25 min</strong></div>
         <div class="event-note" data-i18n="arriveEarly">Please arrive 5 minutes early.</div>
+      </div>
+    </section>
+
+    <section class="section compact zombie-package-section" aria-labelledby="zombiePackageTitle">
+      <div class="card zombie-package-card">
+        <div class="zombie-package-copy">
+          <div class="eyebrow" data-i18n="zombiePackageEyebrow">INCLUDED SIDE ACTIVITY</div>
+          <h2 id="zombiePackageTitle" data-i18n="zombiePackageTitle">MORE THAN ONE GAME.</h2>
+          <p class="muted" data-i18n="zombiePackageText">Every The Final Bell ticket includes access to Zombie Dance.</p>
+          <div class="zombie-package-points">
+            <span data-i18n="zombiePointReplay">🧟 Unlimited Zombie Dance replay</span>
+            <span data-i18n="zombiePointDuration">⏱ Up to 10 minutes per round</span>
+            <span data-i18n="zombiePointPrizes">🏆 Compete for extra prizes</span>
+            <span data-i18n="zombiePointIncluded">🎟 Included in your The Final Bell ticket</span>
+          </div>
+        </div>
+        <a class="btn primary zombie-package-cta" href="https://yy1717.github.io/the-final-bell/zombie-dance/" target="_blank" rel="noopener noreferrer" data-i18n="zombieDiscover">DISCOVER ZOMBIE DANCE →</a>
       </div>
     </section>
 
@@ -143,17 +163,30 @@
       </div>
     </section>
 
-    <section class="section compact help-section" aria-labelledby="helpTitle">
-      <div class="card help-card">
-        <h3 id="helpTitle" data-i18n="helpTitle">Need help?</h3>
-        <p class="muted" data-i18n="helpText">If you have any questions about booking, payment or the event, feel free to contact me.</p>
-        <div class="help-links">
-          <!-- CONTACT LINKS: replace these two href values to update the destinations. -->
-          <div><a class="btn small" href="https://wa.me/60149740922?text=Hi%20I%20have%20a%20question%20about%20The%20Final%20Bell" target="_blank" rel="noopener noreferrer">WhatsApp</a><small class="muted" data-i18n="whatsappHint">Chat on WhatsApp</small></div>
-          <div><a class="btn small" href="https://instagram.com/yuyu17___" target="_blank" rel="noopener noreferrer">Instagram</a><small class="muted" data-i18n="instagramHint">View Instagram</small></div>
+    <section class="section help-section pixel-zone" aria-labelledby="helpTitle">
+      <div class="pixel-divider"><span>◆ CONTACT ◆</span></div>
+      <div class="section-head help-head">
+        <div>
+          <div class="eyebrow" data-i18n="helpEyebrow">NEED HELP?</div>
+          <h2 id="helpTitle" data-i18n="helpTitle">Questions?</h2>
+          <p class="muted" data-i18n="helpText">If you have any questions about booking, payment or The Final Bell, feel free to contact me.</p>
         </div>
-        <p class="organiser-credit">Organised by yy</p>
       </div>
+      <div class="contact-grid">
+        <a class="contact-card" href="https://wa.me/60149740922?text=Hi%20I%20have%20a%20question%20about%20The%20Final%20Bell" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true">💬</span>
+          <span><strong>WhatsApp</strong><small data-i18n="whatsappHint">Chat on WhatsApp</small></span>
+        </a>
+        <a class="contact-card" href="https://instagram.com/yuyu17___" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true">📸</span>
+          <span><strong>Instagram</strong><small data-i18n="instagramHint">View Instagram</small></span>
+        </a>
+        <a class="contact-card" href="https://yy1717.github.io/the-final-bell/zombie-dance/" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true">🧟</span>
+          <span><strong>ZOMBIE DANCE</strong><small data-i18n="zombieMiniTagline">Dance. Deceive. Survive.</small></span>
+        </a>
+      </div>
+      <div class="organised-by"><span data-i18n="organisedBy">Organised by:</span><b>yy</b></div>
     </section>
 
     <footer><span>THE FINAL BELL · Trust No One.</span><span class="footer-note" data-i18n="footerNote">Play fair · Respect the GM · Have fun</span></footer>
@@ -248,6 +281,6 @@
 
   <div id="toast" class="toast hidden"></div>
   <script src="./config.js?v=20260917-booking-toggle"></script>
-  <script src="./app.js?v=20260917-booking-toggle"></script>
+  <script src="./app.js?v=20260920-zombie-package"></script>
 </body>
 </html>
