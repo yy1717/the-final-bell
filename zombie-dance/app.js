@@ -120,7 +120,7 @@ const I18N = {
     included:"The Final Bell 门票已包含",
     walkinStart:"Public walk-in access：9PM 起免费开放",
     venueTba:"Zombie Dance 场地：ROOM 302",
-    openEyebrow:"OPEN SESSION", openTitle:"最后大家都可以加入。", openText:"活动最后 20 分钟，Zombie Dance 会免费开放给所有人。这个时段不设奖品，就是在结束前一起乱最后一轮。", openBadge:"FREE PLAY · NO PRIZES",
+    openEyebrow:"OPEN SESSION", openTitle:"最后大家都可以加入。", openText:"活动最后 30 分钟，Zombie Dance 会免费开放给所有人。这个时段不设奖品，就是在结束前一起乱最后一轮。", openBadge:"FREE PLAY · NO PRIZES",
     helpEyebrow:"有问题吗？",
     helpTitle:"Questions?",
     helpText:"如果你对 Zombie Dance 或 The Final Bell 有任何问题，可以直接联系我。",
