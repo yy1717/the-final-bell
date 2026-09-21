@@ -54,7 +54,7 @@ const I18N = {
     included:"Included with The Final Bell ticket",
     walkinStart:"Public walk-in access: Start from 9pm (Free)",
     venueTba:"Zombie Dance venue: ROOM 302",
-    openEyebrow:"OPEN SESSION", openTitle:"Everyone can join at the end.", openText:"For the final 30 minutes of the event, Zombie Dance opens to everyone for free. No prizes — just one last round of chaos before closing.", openBadge:"FREE PLAY · NO PRIZES",
+    openEyebrow:"OPEN SESSION", openTitle:"Everyone can join at the end.", openText:"For the final 30 minutes of the event, Zombie Dance opens to everyone for free.", openBadge:"FREE PLAY",
     helpEyebrow:"NEED HELP?",
     helpTitle:"Questions?",
     helpText:"If you have any questions about Zombie Dance or The Final Bell, feel free to contact me.",
