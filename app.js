@@ -72,7 +72,7 @@ const ROLE_ZH={
 
 // Public Game Master schedule. Edit only these five assignments to swap GMs.
 const GAME_MASTERS_BY_START_TIME=Object.freeze({
-  '19:00':'HuixinY',
+  '19:00':'Huixin',
   '19:30':'YY',
   '20:00':'Huixin',
   '20:30':'YY',
