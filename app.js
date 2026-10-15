@@ -66,7 +66,7 @@ const ROLE_ZH={
   8:{name:'木乃伊',en:'Mummy',ability:'古老诅咒',text:'每局 1 次。夜晚诅咒 1 名玩家；该玩家第二天仍然可以发言，但投票不计入。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
   9:{name:'狼人',en:'Werewolf',ability:'血月',text:'狼人存活时是 Evil 的 Pack Leader。每局 1 次发动 Blood Moon，让当晚 Evil 夜杀无视普通保护或夜杀免疫，包括 White Witch 的 Protection、Black Cat 的 Nine Lives，以及 Shadow Mage 的 Shadow Veil。狼人出局后，其余 Evil 仍然可以继续普通夜杀。',win:'只要 4 名 God 全部出局，或 4 名 Civilian 全部出局，Evil 立即获胜。'},
   10:{name:'蒙面客',en:'Masked Guest',ability:'假面',text:'第一次受到阵营调查时，会被视为 GOOD。该次调查后伪装破裂，之后的调查会正常显示 Evil。',win:'只要 4 名 God 全部出局，或 4 名 Civilian 全部出局，Evil 立即获胜。'},
-  11:{name:'蜘蛛女王',en:'Spider Queen',ability:'蛛网',text:'每局 1 次。夜晚选择 1 名玩家，使该玩家当晚的个人角色技能失效。如果该玩家在被蛛网影响时尝试使用每局限 1 次的角色技能，该次使用次数仍会被消耗。不会取消正常发言、白天投票或 Evil 阵营夜杀。',win:'只要 4 名 God 全部出局，或 4 名 Civilian 全部出局，Evil 立即获胜。'},
+  11:{name:'蜘蛛女王',en:'Spider Queen',ability:'蛛网',text:'每局 1 次。夜晚选择 1 名玩家，封锁该玩家当晚的主动与被动个人角色技能。被蛛网阻止的有限次数技能不会消耗使用次数。被封锁的玩家仍会被 GM 叫醒，但当晚无法执行被封锁的技能行动。蛛网不影响正常发言、白天投票或 Evil 阵营夜杀。',win:'只要 4 名 God 全部出局，或 4 名 Civilian 全部出局，Evil 立即获胜。'},
   12:{name:'影法师',en:'Shadow Mage',ability:'暗影帷幕',text:'每局 1 次，夜晚发动 Shadow Veil。如果当晚被普通 Evil 夜杀选为目标，你会存活。如果没有被选为目标，该次使用次数仍会被消耗。白天被投票淘汰仍然会出局。Blood Moon 会无视 Shadow Veil。',win:'Final Bell 响起时，如果 Good 和 Evil 均尚未获胜，而你仍然存活，就触发 Shadow Ending，并由你单独获胜。'}
 };
 
