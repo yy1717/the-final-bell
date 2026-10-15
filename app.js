@@ -62,7 +62,7 @@ const ROLE_ZH={
   4:{name:'守夜人',en:'Night Watcher',ability:'监视',text:'每局 1 次。所有夜晚行动结束后选择 1 名玩家，GM 只会告诉你该玩家当晚是否使用了「个人角色技能」。普通 Evil 阵营夜杀不算个人技能。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
   5:{name:'幽灵',en:'Ghost',ability:'最后低语',text:'当你被淘汰时，只有 Ghost 可以留下大约 10 秒的最后发言，然后离开主游戏。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
   6:{name:'黑猫',en:'Black Cat',ability:'九命',text:'第一次受到普通 Evil 夜杀时不会死亡。白天投票淘汰仍然会正常出局。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
-  7:{name:'南瓜王',en:'Pumpkin King',ability:'王权之票',text:'每局 1 次。在白天投票前发动，本轮你的票算 2 票。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
+  7:{name:'南瓜王',en:'Pumpkin King',ability:'王权之票',text:'每局仅能使用 1 次。夜晚被 GM 秘密叫醒时，选择 YES（预留到下一次白天投票）或 NO（继续保留）。只有真正开始该次 Day Vote 才消耗使用次数，该次投票与平票重投均算 2 票。如果始终没有在 Day Vote 使用，只要你仍存活，就会在 Final Hunt 第一场审判自动发动双票。受到木乃伊诅咒时，有效票数仍为 0。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
   8:{name:'木乃伊',en:'Mummy',ability:'古老诅咒',text:'每局 1 次。夜晚诅咒 1 名玩家；该玩家第二天仍然可以发言，但投票不计入。',win:'全部 3 名 Evil 玩家被淘汰时，Good 立即获胜。'},
   9:{name:'狼人',en:'Werewolf',ability:'血月',text:'狼人存活时是 Evil 的 Pack Leader。每局 1 次发动 Blood Moon，让当晚 Evil 夜杀无视普通保护或夜杀免疫，包括 White Witch 的 Protection、Black Cat 的 Nine Lives，以及 Shadow Mage 的 Shadow Veil。狼人出局后，其余 Evil 仍然可以继续普通夜杀。',win:'只要 4 名 God 全部出局，或 4 名 Civilian 全部出局，Evil 立即获胜。'},
   10:{name:'蒙面客',en:'Masked Guest',ability:'假面',text:'第一次受到阵营调查时，会被视为 GOOD。该次调查后伪装破裂，之后的调查会正常显示 Evil。',win:'只要 4 名 God 全部出局，或 4 名 Civilian 全部出局，Evil 立即获胜。'},
