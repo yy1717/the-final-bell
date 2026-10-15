@@ -72,11 +72,11 @@ const ROLE_ZH={
 
 // Public Game Master schedule. Edit only these five assignments to swap GMs.
 const GAME_MASTERS_BY_START_TIME=Object.freeze({
-  '19:00':'Grace',
-  '19:30':'Jianhou',
-  '20:00':'YY',
-  '20:30':'Suba',
-  '21:00':'Jaydon'
+  '19:00':'Grace & Jianhou',
+  '19:30':'Grace & Jianhou',
+  '20:00':'YY & Grace',
+  '20:30':'Jaydon & Suba',
+  '21:00':'Jaydon & Suba'
 });
 
 function slotStartKey(value){
