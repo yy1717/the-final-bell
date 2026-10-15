@@ -35,7 +35,7 @@
     "emoji": "🦉",
     "faction": "GOOD",
     "ability_name": "Watch",
-    "ability_text": "Once per game, after night actions choose 1 player. Learn whether that player used a personal Role Skill that night. The normal Evil faction kill does not count as a personal Role Skill.",
+    "ability_text": "Once per game, after all Night actions, choose 1 player. The GM answers YES if that player ATTEMPTED an active personal Role Skill that Night, including a Web-blocked attempt; otherwise NO. Waking alone does not count. The normal Evil faction Night Kill does not count.",
     "win_condition": "Good wins immediately when all 3 Evil players are eliminated.",
     "role_type": "GOD"
   },
@@ -65,7 +65,7 @@
     "emoji": "🎃",
     "faction": "GOOD",
     "ability_name": "Royal Vote",
-    "ability_text": "Once per game. When called at Night, privately choose YES to use Royal Vote at the next Day Vote, or NO to save it. YES consumes the use only when that Day Vote opens; your vote counts as 2, including any tie revote. If still unused, Royal Vote automatically applies to your vote in the first Final Hunt judgment while you are alive. Mummy Curse makes your vote count as 0.",
+    "ability_text": "Once per game, PUBLICLY declare Royal Vote before ONE Day Vote OR ONE Final Hunt judgment. Your vote counts as 2 for that ballot. A tie revote keeps your double vote. Mummy Curse makes your vote count as 0. This Final Hunt option is an event rule extension; you cannot use Royal Vote twice.",
     "win_condition": "Good wins immediately when all 3 Evil players are eliminated.",
     "role_type": "CIVILIAN"
   },
@@ -105,7 +105,7 @@
     "emoji": "🕷️",
     "faction": "EVIL",
     "ability_name": "Web",
-    "ability_text": "Once per game, at night choose 1 player. Web disables that player's active and passive personal Role Skills for that Night. A limited-use Role Skill blocked by Web does not consume a use. The Webbed player is still called to wake but cannot perform a blocked action. Web does not cancel normal speaking, daytime voting, or the Evil faction night kill.",
+    "ability_text": "Once per game at Night, choose 1 player. Web blocks that player's personal Role Skill for the Night. If a limited-use skill is ATTEMPTED while Webbed, its use is still consumed; skipping the skill preserves its charge. Web does not cancel normal speaking, daytime voting, or the Evil faction Night Kill.",
     "win_condition": "Evil wins immediately when all 4 God roles OR all 4 Civilian roles are eliminated.",
     "role_type": "EVIL"
   },
