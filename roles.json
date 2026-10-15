@@ -65,7 +65,7 @@
     "emoji": "🎃",
     "faction": "GOOD",
     "ability_name": "Royal Vote",
-    "ability_text": "Once per game before a daytime vote, activate this ability. Your vote counts as 2 votes for that round.",
+    "ability_text": "Once per game. When called at Night, privately choose YES to use Royal Vote at the next Day Vote, or NO to save it. YES consumes the use only when that Day Vote opens; your vote counts as 2, including any tie revote. If still unused, Royal Vote automatically applies to your vote in the first Final Hunt judgment while you are alive. Mummy Curse makes your vote count as 0.",
     "win_condition": "Good wins immediately when all 3 Evil players are eliminated.",
     "role_type": "CIVILIAN"
   },
