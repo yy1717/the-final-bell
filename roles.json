@@ -105,7 +105,7 @@
     "emoji": "🕷️",
     "faction": "EVIL",
     "ability_name": "Web",
-    "ability_text": "Once per game at night, choose 1 player. That player's personal Role Skill fails that Night. If they attempt a once-per-game Role Skill while Webbed, that use is still consumed. Web does not cancel normal speaking, daytime voting, or the Evil faction night kill.",
+    "ability_text": "Once per game, at night choose 1 player. Web disables that player's active and passive personal Role Skills for that Night. A limited-use Role Skill blocked by Web does not consume a use. The Webbed player is still called to wake but cannot perform a blocked action. Web does not cancel normal speaking, daytime voting, or the Evil faction night kill.",
     "win_condition": "Evil wins immediately when all 4 God roles OR all 4 Civilian roles are eliminated.",
     "role_type": "EVIL"
   },
