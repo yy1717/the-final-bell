@@ -74,7 +74,7 @@ const ROLE_ZH={
 const GAME_MASTERS_BY_START_TIME=Object.freeze({
   '19:00':'Grace & Jianhou',
   '19:30':'Grace & Jianhou',
-  '20:00':'YY & Grace',
+  '20:00':'Grace & Jianhou',
   '20:30':'Yuga & Suba',
   '21:00':'Yuga & Suba'
 });
